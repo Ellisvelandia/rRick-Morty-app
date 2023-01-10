@@ -13,10 +13,9 @@ body {
 }
 
 .mask1 {
-  -webkit-mask-image: linear-gradient(to top, transparent 4%, black 55%);
-  mask-image: linear-gradient(to top, transparent 4%, black 55%);
+  -webkit-mask-image: linear-gradient(to top, transparent 8%, black 45%);
+  mask-image: linear-gradient(to top, transparent 8%, black 45%);
 }
-
 
 .mask2 {
   -webkit-mask-image: linear-gradient(to bottom, transparent 1%, black 10%);

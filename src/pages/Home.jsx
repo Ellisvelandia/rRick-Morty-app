@@ -10,19 +10,24 @@ const Home = () => {
           autoPlay
           loop
           muted
-          className="w-full 2xl:h-[420px] h-full p-4 object-cover mask1"
+          className="w-full 2xl:h-[420px] h-full object-cover mask1"
         ></video>
         <div className="absolute w-full flex align-center justify-center flex-col">
           <img
             src="https://media.cdn.adultswim.com/uploads/20210428/21428161947-rick-and-morty-logo-png.png"
             alt="title"
-            className="w-96 flex m-auto  h-50 object-cover"
+            className="w-80 mt-8 md:mt-0 md:w-[800px] flex m-auto h-50 object-cover"
           />
         </div>
       </header>
-      <Link to="/characters">
-        <h3 className="text-5xl font-bold text-white">view all Characters</h3>
-      </Link>
+      <div className="flex xl:flex-row flex-col justify-center md:gap-12 gap-2">
+        <Link to="/characters">
+          <h3 className="md:text-5xl text-3xl text-white hover:text-[#216a74]">view all Characters</h3>
+        </Link>
+        <Link to="/episodes">
+          <h3 className="md:text-5xl text-3xl text-white hover:text-[#216a74]">view Episodes</h3>
+        </Link>
+      </div>
     </>
   );
 };
