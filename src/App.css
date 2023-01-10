@@ -12,13 +12,13 @@ body {
   background-color: #01b1ca;
 }
 
-video::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: linear-gradient(to bottom, #79B4FC, #01B1CA);
-  z-index: -1;
+.mask1 {
+  -webkit-mask-image: linear-gradient(to top, transparent 4%, black 55%);
+  mask-image: linear-gradient(to top, transparent 4%, black 55%);
+}
+
+
+.mask2 {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 1%, black 10%);
+  mask-image: linear-gradient(to top, transparent 4%, black 55%);
 }
