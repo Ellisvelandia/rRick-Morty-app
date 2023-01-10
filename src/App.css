@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+#root {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Creepster", cursive;
+}
+
+body {
+  background-color: #01b1ca;
+}
+
+video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: linear-gradient(to bottom, #79B4FC, #01B1CA);
+  z-index: -1;
+}
