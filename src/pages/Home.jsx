@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import video from "../assets/video.mp4";
 import { motion } from "framer-motion";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -40,6 +41,7 @@ const Home = () => {
           </motion.h3>
         </Link>
       </div>
+      <Footer />
     </>
   );
 };
