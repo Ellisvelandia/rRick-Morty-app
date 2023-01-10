@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import video from "../assets/video.mp4";
+import { motion } from "framer-motion";
+
 const Home = () => {
   return (
     <>
@@ -22,10 +24,20 @@ const Home = () => {
       </header>
       <div className="flex xl:flex-row flex-col justify-center md:gap-12 gap-2">
         <Link to="/characters">
-          <h3 className="md:text-5xl text-3xl text-white hover:text-[#216a74]">view all Characters</h3>
+          <motion.h3
+            className="md:text-5xl text-3xl text-white hover:text-[#216a74]"
+            whileTap={{ rotate: 360, scale: 0.5 }}
+          >
+            view all Characters
+          </motion.h3>
         </Link>
         <Link to="/episodes">
-          <h3 className="md:text-5xl text-3xl text-white hover:text-[#216a74]">view Episodes</h3>
+          <motion.h3
+            className="md:text-5xl text-3xl text-white hover:text-[#216a74]"
+            whileTap={{ rotate: 360, scale: 0.5 }}
+          >
+            view Episodes
+          </motion.h3>
         </Link>
       </div>
     </>
