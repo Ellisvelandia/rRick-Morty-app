@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const CardCharacters = ({ character }) => {
-  let { name, image, status } = character;
+  let { name, image } = character;
   return (
     <>
       <Link to={`/card/${character.id}`}>

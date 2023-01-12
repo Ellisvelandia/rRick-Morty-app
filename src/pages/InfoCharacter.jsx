@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function SingleCharacter() {
   const [character, setCharacter] = useState({});
   const { id } = useParams();
+
+  let { image, name, species, gender, origin, status, location } = character;
 
   useEffect(() => {
     const fetchSingleCharacterData = async () => {
@@ -23,41 +26,43 @@ export default function SingleCharacter() {
 
   return (
     <>
-      <section className="max-w-5xl mx-auto flex items-center justify-center h-screen">
-        <div className="grid grid-cols-1 gap-4 p-8 md:grid-cols-2 place-items-center">
+      <section className="w-full h-screen flex justify-center items-center">
+        <div className="grid grid-cols-1 p-4 md:grid-cols-2 place-items-center">
           <article>
-            <img
-              src={character.image}
-              alt={character.name}
-              className="w-[400px] rounded"
+            <motion.img
+              src={image}
+              alt={name}
+              className="w-[450px] md:h-[400px] h-[250px] rounded md:mb-0 mb-3"
+              initial={{ opacity: 0, y: "-100vh" }}
+              animate={{ opacity: 1, y: 0 }}
             />
           </article>
           <article className="w-full md:my-8">
-            <h1 className="text-3xl font-bold text-white mb-8 md:text-6xl h-full">
-              {character.name}
+            <h1 className="text-5xl font-bold text-white my-1 md:mb-8 md:text-6xl">
+              {name}
             </h1>
-            <p className="text-gray-100 my-1 text-2xl md:text-4xl leading-loose md:leading-relaxed">
-            Species: {character.species}
+            <p className="text-gray-100 md:my-1 -my-2  text-2xl md:text-4xl leading-loose md:leading-relaxed">
+              Species: {species}
             </p>
-            <p className="text-gray-100 my-1 text-2xl md:text-4xl leading-loose md:leading-relaxed">
-             Gender: {character.gender}
+            <p className="text-gray-100 md:my-1 -my-2 text-2xl md:text-4xl leading-loose md:leading-relaxed">
+              Gender: {gender}
             </p>
-            <p className="text-gray-100 my-1 text-2xl md:text-4xl leading-loose md:leading-relaxed">
-              Origin: {character.origin && character.origin.name}
+            <p className="text-gray-100 md:my-1 -my-2 text-2xl md:text-4xl leading-loose md:leading-relaxed">
+              Origin: {origin && origin.name}
             </p>
-            <p className="text-gray-100 my-1 text-2xl md:text-4xl leading-loose md:leading-relaxed">
-             Status: {character.status}
+            <p className="text-gray-100 md:my-1 -my-2 text-2xl md:text-4xl leading-loose md:leading-relaxed">
+              Status: {status}
             </p>
-            <p className="text-gray-100 my-1 text-2xl md:text-4xl leading-loose md:leading-relaxed">
-             Location:  {character.location && character.location.name}
+            <p className="text-gray-100 md:my-1 -my-2 text-2xl md:text-4xl leading-loose md:leading-relaxed">
+              Location: {location && location.name}
             </p>
-            </article>
-            <Link
-              to="/characters"
-              className="flex bg-[#166a74] py-2 justify-center px-6 rounded md:mt-12 text-white hover:bg-cyan-600 drop-shadow-2xl transition-all duration-200 active:scale-90"
-            >
-              &larr; Back
-            </Link>
+          </article>
+          <Link
+            to="/characters"
+            className="flex bg-[#166a74] py-2 md:mb-0 justify-center px-6 rounded mt-2 text-white hover:bg-cyan-600 drop-shadow-2xl transition-all duration-200 active:scale-90"
+          >
+            &larr; Back
+          </Link>
         </div>
       </section>
     </>

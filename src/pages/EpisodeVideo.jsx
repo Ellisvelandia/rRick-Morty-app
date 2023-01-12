@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import poster from "../assets/poster.webp";
 import episoderick from "../assets/episode.mp4";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const EpisodeVideo = () => {
+  const [episodes, setEpisodes] = useState({});
+  const { id } = useParams();
+
+  let { name } = episodes;
+
+  useEffect(() => {
+    const fetchSingleEpisode = async () => {
+      try {
+        const res = await fetch(
+          `https://rickandmortyapi.com/api/episode/${id}`
+        );
+        const data = await res.json();
+        setEpisodes(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSingleEpisode();
+  }, [id]);
+
   return (
     <div className="relative w-full flex justify-center">
+      <h1 className="text-white absolute md:top-5 top-20 justify-center w-full m-0 text-5xl">
+        Episode: {name}
+      </h1>
       <motion.div className="w-full flex justify-center align-center h-screen">
         <video
           src={episoderick}
@@ -15,7 +39,7 @@ const EpisodeVideo = () => {
           poster={poster}
           loop
           playsInline
-          className="md:object-fill object-contain md:my-0 my-auto md:p-20 w-full"
+          className="md:object-fill object-contain md:h-full h-[550px] md:my-0 my-auto px-2 md:p-20 w-full"
         ></video>
       </motion.div>
       <Link

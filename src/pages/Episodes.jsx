@@ -19,7 +19,7 @@ const Episodes = () => {
       <Link to="/" className="inline-block">
         <img
           src="https://media.cdn.adultswim.com/uploads/20210428/21428161947-rick-and-morty-logo-png.png"
-          alt=""
+          alt="logo"
         />
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-6">

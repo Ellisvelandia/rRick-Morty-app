@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export const CardEpisode = ({ episode }) => {
-  let { air_date, name, url, image } = episode;
+  let { air_date, name, image } = episode;
   return (
     <motion.div
       animate={{ opacity: 1 }}
@@ -20,7 +20,7 @@ export const CardEpisode = ({ episode }) => {
         className="w-full p-4 h-[550px] mx-auto"
       />
       <p>Air Date: {air_date === "" ? "Unknown" : air_date}</p>
-      <Link to="/episodevideo">View episode</Link>
+      <Link to={`/episodevideo/${episode.id}`}>View episode</Link>
     </motion.div>
   );
 };
