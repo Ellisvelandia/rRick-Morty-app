@@ -1,6 +1,7 @@
 import React from "react";
 import post from "../assets/post.webp";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const CardEpisode = ({ episode }) => {
   let { air_date, name, url, image } = episode;
@@ -19,9 +20,7 @@ export const CardEpisode = ({ episode }) => {
         className="w-full p-4 h-[550px] mx-auto"
       />
       <p>Air Date: {air_date === "" ? "Unknown" : air_date}</p>
-      <a href={url} target="_blank">
-        View episode
-      </a>
+      <Link to="/episodevideo">View episode</Link>
     </motion.div>
   );
 };
